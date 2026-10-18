@@ -20,9 +20,7 @@ const CHROME_EXE =
   'C:\\Users\\roojo\\AppData\\Local\\ms-playwright\\chromium-1243\\chrome-win64\\chrome.exe';
 const BASE_URL = 'http://127.0.0.1:3000';
 
-let devServer = null;
-
-async function waitForHealth(retries = 80, delayMs = 1000) {
+async function waitForHealth(retries = 100, delayMs = 1000) {
   for (let i = 0; i < retries; i++) {
     try {
       const res = await fetch(`${BASE_URL}/api/health`);
